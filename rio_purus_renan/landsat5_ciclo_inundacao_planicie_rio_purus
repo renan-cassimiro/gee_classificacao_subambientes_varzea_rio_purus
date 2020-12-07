@@ -2,11 +2,11 @@
 var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/fapesp2020/pf_area_principal_renan_2020_2021");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
-var uteis = require('user/renancassimiro/fapesp2020:utilidades/funcoes_uteis');
+var uteis = require('user/renancassimiro/fapesp2020:utilidades/funcoes_uteis.js');
 
 var dataset = ee.ImageCollection('LANDSAT/LT05/C01/T2_SR')
                   .filterDate('2010-01-01', '2011-12-31')
-                  .map(uteis.mascara);
+                  .map(uteis.mascaraNuvemLandsat457);
 
 var visParams = {
   bands: ['B3', 'B2', 'B1'],
