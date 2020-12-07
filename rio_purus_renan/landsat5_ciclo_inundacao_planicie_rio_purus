@@ -4,15 +4,7 @@ var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/
 
 var uteis = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
 
-
-var visParams = {
-  bands: ['B3', 'B2', 'B1'],
-  min: 0,
-  max: 3000,
-  gamma: 1.4,
-};
-
-Map.setCenter(-91.0725, 33.2513, 10);
+colecaoLandsat5 = utesi.importaColecao('2011-01-01', '2011-12-31', area_principal_renan_2020_2021)
 
 Map.addLayer(dataset.median(), visParams)
 
