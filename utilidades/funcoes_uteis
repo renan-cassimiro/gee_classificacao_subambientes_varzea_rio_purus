@@ -14,7 +14,3 @@ var mascaraNuvemLandsat457 = function(image) {
   var mask2 = image.mask().reduce(ee.Reducer.min());
   return image.updateMask(cloud.not()).updateMask(mask2);
 };
-
-var dataset = ee.ImageCollection('LANDSAT/LT05/C01/T2_SR')
-                  .filterDate('2010-01-01', '2011-12-31')
-                  .map(cloudMaskL457);
