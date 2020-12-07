@@ -3,7 +3,7 @@
  * @param {ee.Image} image Input Landsat SR image
  * @return {ee.Image} Cloudmasked Landsat image
  */
-exports.mascaraNuvemLandsat457 = function(image) {
+exports.mascaraNuvem = function(image) {
   var qa = image.select('pixel_qa');
   // If the cloud bit (5) is set and the cloud confidence (7) is high
   // or the cloud shadow bit is set (3), then it's a bad pixel.
