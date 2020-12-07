@@ -16,6 +16,8 @@ exports.mascaraNuvem = function(image) {
 };
 
 
+
+
 /** 
  * Combinação de bandas 
  * Referência: http://marte.sid.inpe.br/col/dpi.inpe.br/marte/2011/07.22.17.52/doc/p1189.pdf?ibiurl.language=en 
