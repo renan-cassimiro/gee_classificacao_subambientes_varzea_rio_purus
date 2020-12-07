@@ -6,7 +6,7 @@ var uteis = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5')
 var colecaoLandsat5 = uteis.importaColecao('2008-01-01', '2009-01-01', area_principal_renan_2020_2021);
 var composicao = colecaoLandsat5.median().clip(area_principal_renan_2020_2021);
 
-colecaoLansat5.foreach(function(obj){
+colecaoLandsat5.foreach(function(obj){
   print(obj);
 });
 
