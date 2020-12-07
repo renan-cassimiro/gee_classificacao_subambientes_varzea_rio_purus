@@ -6,8 +6,12 @@ var uteis = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5')
 var colecaoLandsat5 = uteis.importaColecao('2008-01-01', '2009-01-01', area_principal_renan_2020_2021);
 var composicao = colecaoLandsat5.median().clip(area_principal_renan_2020_2021);
 
-var dates = colecaoLandsat5.aggregate_array("system:time_start");
-
+var dates = colecaoLandsat5.aggregate_array("system:time_start").map(function(image) {
+      return ee.Feature(null, {'date': image.date().format('YYYY-MM-dd')})
+    })
+    .distinct('date')
+    .aggregate_array('date');
+    
 print(dates);
 
 Map.addLayer(composicao, uteis.corNatural);
