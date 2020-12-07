@@ -3,8 +3,7 @@ var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
 var uteis = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
-
-colecaoLandsat5 = utesi.importaColecao('2011-01-01', '2011-12-31', area_principal_renan_2020_2021)
+var colecaoLandsat5 = uteis.importaColecao('2011-01-01', '2011-12-31', area_principal_renan_2020_2021);
 
 Map.addLayer(dataset.median(), visParams)
 
