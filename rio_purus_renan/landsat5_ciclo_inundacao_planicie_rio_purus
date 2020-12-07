@@ -16,5 +16,9 @@ var dates = colecaoLandsat5.map(function(image) {
     
 print(dates);
 
-Map.addLayer(composicao, uteis.corNatural);
+
+var imagemChuvosa = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_001066_20090102');
+
+Map.addLayer(imagemChuvosa, uteis.corNatural)
+//Map.addLayer(composicao, uteis.corFalsaNatural);
 //Map.addLayer(area_principal_renan_2020_2021);
