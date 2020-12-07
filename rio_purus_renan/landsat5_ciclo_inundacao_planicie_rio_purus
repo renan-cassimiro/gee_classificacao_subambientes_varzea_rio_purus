@@ -17,7 +17,7 @@ var dates = colecaoLandsat5.map(function(image) {
 print(dates);
 
 
-var imagemChuvosa = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_001066_20090102');
+var imagemChuvosa = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_001066_20081014');
 
 Map.addLayer(imagemChuvosa, uteis.corNatural)
 //Map.addLayer(composicao, uteis.corFalsaNatural);
