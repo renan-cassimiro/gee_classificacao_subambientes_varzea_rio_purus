@@ -4,9 +4,6 @@ var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/
 
 var uteis = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
 
-var dataset = ee.ImageCollection('LANDSAT/LT05/C01/T2_SR')
-                  .filterDate('2010-01-01', '2011-12-31')
-                  .map(uteis.mascaraNuvemLandsat457);
 
 var visParams = {
   bands: ['B3', 'B2', 'B1'],
