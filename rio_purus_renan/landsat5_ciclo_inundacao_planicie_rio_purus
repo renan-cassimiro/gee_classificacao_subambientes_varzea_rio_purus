@@ -9,4 +9,4 @@ var composicao = colecaoLandsat5.median().clip(area_principal_renan_2020_2021);
 print(colecaoLandsat5);
 
 Map.addLayer(composicao, uteis.corNatural);
-Map.addLayer(area_principal_renan_2020_2021);
+;;Map.addLayer(area_principal_renan_2020_2021);
