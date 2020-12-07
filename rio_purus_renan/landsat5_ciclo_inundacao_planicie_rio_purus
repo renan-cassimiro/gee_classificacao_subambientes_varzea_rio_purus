@@ -7,4 +7,4 @@ var colecaoLandsat5 = uteis.importaColecao('2011-01-01', '2011-12-31', area_prin
 
 Map.addLayer(colecaoLandsat5.median(), uteis.falsaCor)
 
-Map.addLayer(area_principal_renan_2020_2021);
+//Map.addLayer(area_principal_renan_2020_2021);
