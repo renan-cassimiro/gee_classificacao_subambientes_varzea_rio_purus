@@ -7,7 +7,6 @@ var colecaoLandsat5 = uteis.importaColecao('2008-01-01', '2009-01-01', area_prin
 var composicao = colecaoLandsat5.median().clip(area_principal_renan_2020_2021);
 
 colecaoLandsat5.map(function(imagem){
-  print(imagem);
   return  imagem;
 });
 
