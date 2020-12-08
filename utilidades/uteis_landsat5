@@ -21,6 +21,7 @@ exports.mascaraNuvem = mascaraNuvem;
 exports.importaColecao = function(dataInicio, dataFim, area){
   return ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
                   .filterDate(dataInicio, dataFim)
+                  .filterBounds(area)
                   .map(mascaraNuvem);
 };
 
