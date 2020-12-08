@@ -6,16 +6,6 @@ var uteis = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5')
 var colecaoLandsat5 = uteis.importaColecao('2008-02-01', '2008-04-30');
 var composicao = colecaoLandsat5.median().clip(area_principal_renan_2020_2021);
 
-print(colecaoLandsat5);
-
-var dates = colecaoLandsat5.map(function(image) {
-      return ee.Feature(null, {'date': image.date().format('YYYY-MM-dd')})
-    })
-    .distinct('date')
-    .aggregate_array('date');
-    
-print(dates);
-
 
 var imagemChuvosa = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_001066_20081014');
 
