@@ -1,20 +1,11 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/fapesp2020/pf_area_principal_renan_2020_2021");
+var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/fapesp2020/pf_area_principal_renan_2020_2021"),
+    imageCollection = ee.ImageCollection("MODIS/006/MOD09A1");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
 var uteis = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
 var colecaoLandsat5 = uteis.importaColecao('2008-01-01', '2009-02-01', area_principal_renan_2020_2021);
-var composicao = colecaoLandsat5.median().clip(area_principal_renan_2020_2021);
-
-print(colecaoLandsat5);
-
-var dates = colecaoLandsat5.map(function(image) {
-      return ee.Feature(null, {'date': image.date().format('YYYY-MM-dd')})
-    })
-    .distinct('date')
-    .aggregate_array('date');
-    
-print(dates);
+var composicao = imageCollection.median().clip(area_principal_renan_2020_2021);
 
 
 Map.addLayer(imagemChuvosa, uteis.corNatural)
