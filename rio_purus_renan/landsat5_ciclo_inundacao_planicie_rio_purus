@@ -8,7 +8,7 @@ var composicao = colecaoLandsat5.median().clip(area_principal_renan_2020_2021);
 
 Map.setCenter(-67.4508,-8.7, 11)
 
-Map.addLayer(composicao, uteis.corNatural)
+//Map.addLayer(composicao, uteis.corNatural)
 Map.addLayer(colecaoLandsat5.firstNonZero(), uteis.corNatural)
 
 //Map.addLayer(composicao, uteis.corFalsaNatural);
