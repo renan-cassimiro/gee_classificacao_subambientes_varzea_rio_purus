@@ -12,4 +12,9 @@ var imagemPeriodoUmido1101b = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_231063_20080
 imagemPeriodoUmido1101b = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101b);
 Map.addLayer(imagemPeriodoUmido1101b, uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101b');
 
+var colecaoPeriodoUmido = ee.ImageCollection([imagemPeriodoUmido1101a, imagemPeriodoUmido1101b]);
+Map.addLayer(colecaoPeriodoUmido, uteisGeral.falsaCorNatural)
+
 Map.addLayer(pf_area_principal_samara_2020_2021, '', 'area');
+
+uteisGeral.exportarDrive(exportarDrive)
