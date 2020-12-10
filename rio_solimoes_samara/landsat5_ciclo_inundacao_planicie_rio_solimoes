@@ -13,5 +13,5 @@ var composicao = colecaoLandsat5.median().clip(pf_area_principal_samara_2020_202
 
 Map.addLayer(composicao, uteisLandsat.falsaCorNatural);
 
-//uteisGeral.exportarDrive(composicao, pf_area_principal_samara_2020_2021);
+uteisGeral.exportarDrive(composicao, pf_area_principal_samara_2020_2021);
 
