@@ -8,4 +8,4 @@ var colecaoLandsat5 = uteis.importaColecao('2008-01-01', '2009-04-01', area_prin
 
 var composicao = colecaoLandsat5.median().clip(area_principal_renan_2020_2021);
 
-Map.addLayer(colecaoLandsat5.first(), uteis.corNatural);
+Map.addLayer(composicao, uteis.falsaCorNatural);
