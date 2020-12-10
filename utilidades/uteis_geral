@@ -7,6 +7,5 @@ exports.mascaraNuvem = function(geometry) {
     scale: 30,
     region: geometry
   });
-
   
 }
