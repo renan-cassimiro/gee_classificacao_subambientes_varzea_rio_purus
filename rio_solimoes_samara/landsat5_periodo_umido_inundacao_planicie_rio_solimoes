@@ -9,3 +9,4 @@ var imagemPeriodoUmido = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_231062_20080111')
 imagemPeriodoUmido = uteisLandsat.mascaraNuvem(imagemPeriodoUmido);
 
 Map.addLayer(imagemPeriodoUmido.clip(pf_area_principal_samara_2020_2021), uteisGeral.falsaCorNatural);
+Map.addLayer(pf_area_principal_samara_2020_2021);
