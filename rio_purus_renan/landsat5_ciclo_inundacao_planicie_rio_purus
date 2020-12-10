@@ -2,12 +2,15 @@
 var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/fapesp2020/pf_area_principal_renan_2020_2021");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
-var uteis = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
+var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
+var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral');
 
-var colecaoLandsat5 = uteis.importaColecao('2008-01-01', '2009-04-01', area_principal_renan_2020_2021);
+var colecaoLandsat5 = uteisLandsat.importaColecao('2008-01-01', '2009-04-01', area_principal_renan_2020_2021);
 
 var composicao = colecaoLandsat5.median().clip(area_principal_renan_2020_2021);
 
-Map.addLayer(composicao, uteis.falsaCorNatural);
+Map.addLayer(composicao, uteisLandsat.falsaCorNatural);
+
+
 
 
