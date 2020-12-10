@@ -1,6 +1,5 @@
 exports.mascaraNuvem = function(geometry) {
 
-  // Export the image, specifying scale and region.
   Export.image.toDrive({
     image: landsat,
     description: 'imageToDriveExample',
