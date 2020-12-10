@@ -1,5 +1,4 @@
-exports.mascaraNuvem = function() {
-  ee.Geometry.Rectangle([116.2621, 39.8412, 116.4849, 40.01236]);
+exports.mascaraNuvem = function(geometry) {
 
   // Export the image, specifying scale and region.
   Export.image.toDrive({
