@@ -1,10 +1,9 @@
-exports.mascaraNuvem = function(geometry) {
-
+exports.exportarDrive = function(imagem, area) {
   Export.image.toDrive({
-    image: landsat,
-    description: 'imageToDriveExample',
+    image: imagem,
+    description: 'imagemLandsat',
     scale: 30,
-    region: geometry
+    region: area
   });
   
 }
