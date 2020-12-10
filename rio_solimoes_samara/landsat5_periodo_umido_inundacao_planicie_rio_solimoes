@@ -2,6 +2,6 @@
 var pf_area_principal_samara_2020_2021 = ee.FeatureCollection("users/samaralydia_GEE/DELIMITACAO_PLANICIE_FLUVIAL_MANACAPURU_");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
-imagemPeriodoUmido = ee.Image('');
+imagemPeriodoUmido = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_231062_20080111');
 
-Map.addLayer(imageCollection.mean().clip(pf_area_principal_samara_2020_2021), trueColorVis);
+Map.addLayer(imagemPeriodoUmido, trueColorVis);
