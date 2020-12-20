@@ -4,13 +4,11 @@ var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/
 
 var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
 var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral');
-
 var colecaoLandsat5 = uteisLandsat.importaColecao('2008-01-01', '2009-02-01', area_principal_renan_2020_2021);
-
 var dates = colecaoLandsat5.aggregate_array('system:time_start')
     .map(function(d) { return ee.Date(d)});
- 
-// print a list with dates
+    
+print(colecaoLandsat5)
 print(dates.sort());
 
 
