@@ -7,7 +7,12 @@ var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral
 
 var colecaoLandsat5 = uteisLandsat.importaColecao('2008-01-01', '2009-02-01', area_principal_renan_2020_2021);
 
-print(colecaoLandsat5);
+var dates = colecaoLandsat5.aggregate_array('system:time_start')
+    .map(function(d) { return ee.Date(d)});
+ 
+// print a list with dates
+print(dates.sort());
+
 
 var composicao = colecaoLandsat5.median().clip(area_principal_renan_2020_2021);
 
