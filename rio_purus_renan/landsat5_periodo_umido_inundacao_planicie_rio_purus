@@ -5,6 +5,8 @@ var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/
 var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral');
 var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
 
+Map.addLayer(area_principal_renan_2020_2021, '', 'area');
+
 var imagemPeriodoUmido1101a = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_001066_20090102');
 imagemPeriodoUmido1101a = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101a);
 Map.addLayer(imagemPeriodoUmido1101a.clip(area_principal_renan_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101a');
@@ -12,7 +14,5 @@ Map.addLayer(imagemPeriodoUmido1101a.clip(area_principal_renan_2020_2021), uteis
 var colecaoPeriodoUmido = ee.ImageCollection([imagemPeriodoUmido1101a]);
 var imagemPeriodoUmido = colecaoPeriodoUmido.mean().clip(area_principal_renan_2020_2021);
 Map.addLayer(imagemPeriodoUmido, uteisGeral.falsaCorNatural, 'imagemPeriodoChuvoso');
-
-Map.addLayer(area_principal_renan_2020_2021, '', 'area');
 
 uteisGeral.exportarDrive(imagemPeriodoUmido, area_principal_renan_2020_2021);
