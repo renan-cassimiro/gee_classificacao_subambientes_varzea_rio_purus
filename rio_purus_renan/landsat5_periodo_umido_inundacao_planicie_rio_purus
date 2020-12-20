@@ -1,3 +1,7 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/fapesp2020/pf_area_principal_renan_2020_2021");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
 var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral');
 var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
 
@@ -15,4 +19,4 @@ Map.addLayer(imagemPeriodoUmido, uteisGeral.falsaCorNatural, 'imagemPeriodoChuvo
 
 Map.addLayer(pf_area_principal_samara_2020_2021, '', 'area');
 
-uteisGeral.exportarDrive(imagemPeriodoUmido, pf_area_principal_samara_2020_2021);
+uteisGeral.exportarDrive(imagemPeriodoUmido, area_principal_renan_2020_2021);
