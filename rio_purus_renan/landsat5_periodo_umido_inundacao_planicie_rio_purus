@@ -17,6 +17,6 @@ var colecaoPeriodoUmido = ee.ImageCollection([imagemPeriodoUmido1101a, imagemPer
 var imagemPeriodoUmido = colecaoPeriodoUmido.mean().clip(pf_area_principal_samara_2020_2021);
 Map.addLayer(imagemPeriodoUmido, uteisGeral.falsaCorNatural, 'imagemPeriodoChuvoso');
 
-Map.addLayer(pf_area_principal_samara_2020_2021, '', 'area');
+Map.addLayer(area_principal_renan_2020_2021, '', 'area');
 
 uteisGeral.exportarDrive(imagemPeriodoUmido, area_principal_renan_2020_2021);
