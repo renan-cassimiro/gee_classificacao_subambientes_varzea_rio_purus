@@ -22,6 +22,6 @@ Map.addLayer(imagemPeriodoUmido1101c.clip(area_principal_renan_2020_2021), uteis
 
 var colecaoPeriodoUmido = ee.ImageCollection([imagemPeriodoUmido1101a, imagemPeriodoUmido1101b, imagemPeriodoUmido1101c]);
 var imagemPeriodoUmido = colecaoPeriodoUmido.mean().clip(area_principal_renan_2020_2021);
-Map.addLayer(imagemPeriodoUmido, uteisGeral.falsaCorNatural, 'imagemPeriodoChuvoso');
+Map.addLayer(imagemPeriodoUmido, uteisGeral, 'imagemPeriodoChuvoso');
 
 //uteisGeral.exportarDrive(imagemPeriodoUmido, area_principal_renan_2020_2021);
