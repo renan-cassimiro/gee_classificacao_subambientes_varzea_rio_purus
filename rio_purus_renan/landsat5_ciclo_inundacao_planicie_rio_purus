@@ -14,5 +14,3 @@ print(dates.sort());
 
 Map.addLayer(composicao, uteisLandsat.falsaCorNatural);
 uteisGeral.exportarDrive(composicao, area_principal_renan_2020_2021);
-
-
