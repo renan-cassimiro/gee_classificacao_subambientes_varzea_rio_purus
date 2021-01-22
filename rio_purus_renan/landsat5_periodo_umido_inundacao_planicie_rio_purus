@@ -23,9 +23,13 @@ var imagemPeriodoUmido1101d = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_001066_20070
 imagemPeriodoUmido1101d = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101d);
 Map.addLayer(imagemPeriodoUmido1101d.clip(area_principal_renan_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101d');
 
+var imagemPeriodoUmido1101e = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_001066_20070129');
+imagemPeriodoUmido1101e = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101e);
+Map.addLayer(imagemPeriodoUmido1101d.clip(area_principal_renan_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101e');
+
 
 var colecaoPeriodoUmido = ee.ImageCollection(
-  [imagemPeriodoUmido1101a, imagemPeriodoUmido1101b, imagemPeriodoUmido1101c, imagemPeriodoUmido1101d]);
+  [imagemPeriodoUmido1101a, imagemPeriodoUmido1101b, imagemPeriodoUmido1101c, imagemPeriodoUmido1101d, imagemPeriodoUmido1101e]);
 var imagemPeriodoUmido = colecaoPeriodoUmido.mean().clip(area_principal_renan_2020_2021);
 Map.addLayer(imagemPeriodoUmido, uteisGeral.falsaCorNatural, 'imagemPeriodoChuvoso');
 
