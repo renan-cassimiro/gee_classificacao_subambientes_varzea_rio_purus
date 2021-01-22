@@ -11,7 +11,7 @@ var imagemPeriodoUmido1101a = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_001066_20090
 imagemPeriodoUmido1101a = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101a);
 Map.addLayer(imagemPeriodoUmido1101a.clip(area_principal_renan_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101a');
 
-var imagemPeriodoUmido1101b = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_002066_20080428');
+var imagemPeriodoUmido1101b = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_001066_20090203');
 imagemPeriodoUmido1101a = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101b);
 Map.addLayer(imagemPeriodoUmido1101b.clip(area_principal_renan_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101b');
 
@@ -19,21 +19,8 @@ var imagemPeriodoUmido1101c = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_002066_20080
 imagemPeriodoUmido1101c = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101c);
 Map.addLayer(imagemPeriodoUmido1101c.clip(area_principal_renan_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101c');
 
-var imagemPeriodoUmido1101d = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_001066_20070129');
-imagemPeriodoUmido1101d = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101d);
-Map.addLayer(imagemPeriodoUmido1101d.clip(area_principal_renan_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101d');
 
-var imagemPeriodoUmido1101e = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_001066_20070214');
-imagemPeriodoUmido1101e = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101e);
-Map.addLayer(imagemPeriodoUmido1101e.clip(area_principal_renan_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101e');
-
-var imagemPeriodoUmido1101f = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_001066_20070419');
-imagemPeriodoUmido1101f = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101f);
-Map.addLayer(imagemPeriodoUmido1101f.clip(area_principal_renan_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101f');
-
-
-var colecaoPeriodoUmido = ee.ImageCollection(
-  [imagemPeriodoUmido1101a, imagemPeriodoUmido1101b, imagemPeriodoUmido1101c, imagemPeriodoUmido1101d, imagemPeriodoUmido1101e, imagemPeriodoUmido1101f]);
+var colecaoPeriodoUmido = ee.ImageCollection([imagemPeriodoUmido1101a, imagemPeriodoUmido1101b, imagemPeriodoUmido1101c]);
 var imagemPeriodoUmido = colecaoPeriodoUmido.mean().clip(area_principal_renan_2020_2021);
 Map.addLayer(imagemPeriodoUmido, uteisGeral.falsaCorNatural, 'imagemPeriodoChuvoso');
 
