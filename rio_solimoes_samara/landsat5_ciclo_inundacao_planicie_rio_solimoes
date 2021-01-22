@@ -10,7 +10,7 @@ var dates = colecaoLandsat5.aggregate_array('system:time_start')
     .map(function(d) { return ee.Date(d)});
     
 print(colecaoLandsat5);
-
+print(dates.sort());
 
 Map.addLayer(composicao, uteisLandsat.falsaCorNatural);
 uteisGeral.exportarDrive(composicao, pf_area_principal_samara_2020_2021);
