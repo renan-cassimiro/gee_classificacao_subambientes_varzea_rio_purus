@@ -8,7 +8,7 @@ var imagemPeriodoUmido1101a = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_231062_20080
 imagemPeriodoUmido1101a = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101a);
 Map.addLayer(imagemPeriodoUmido1101a.clip(pf_area_principal_samara_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101a');
 
-var imagemPeriodoUmido1101b = ee.Image('LANDSAT / LT05 / C01 / T1_SR / LT05_231063_20080111');
+var imagemPeriodoUmido1101b = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_231063_20080111');
 imagemPeriodoUmido1101b = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101b);
 Map.addLayer(imagemPeriodoUmido1101b.clip(pf_area_principal_samara_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101b');
 
