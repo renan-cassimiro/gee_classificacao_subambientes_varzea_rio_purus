@@ -2,4 +2,18 @@ var paises = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017')
 print(paises.size())
 var brasil = paises.filterMetadata ('country_co', 'equals','BR')
 print(brasil.size())
+Map.addLayer(brasil)
+var lista = ee.List([])
+var N = 10
+for(var i =0 ; i<N;i++){
+  var imgRand = ee.Image.random(i)
+  lista = lista.add(imgRand)
+}
+var imgCol = ee.ImageCollection(lista)
+imgCol = imgCol.filterBounds(brasil)
+
+Map.addLayer(imgCol.median())
+Map.addLayer(imgCol.min())
+Map.addLayer(imgCol.max())
+
 
