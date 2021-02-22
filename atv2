@@ -1,0 +1,5 @@
+var paises = ee.FeatureCollection('USDOS/LSIB_SIMPLE/2017')
+print(paises.size())
+var brasil = paises.filterMetadata ('country_co', 'equals','BR')
+print(brasil.size())
+
