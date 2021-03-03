@@ -20,8 +20,8 @@ var dataset2008 = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
                   .filterBounds(pf_area_principal_samara_2020_2021)
                   .map(cloudMaskL457);
 
-var barrasFluviais2007 = dataset2007.median().clip(pf_area_principal_samara_2020_2021);
-var barrasFluviais2008 = dataset2008.median().clip(pf_area_principal_samara_2020_2021);
+var barrasFluviais2007 = dataset2007.mean().clip(pf_area_principal_samara_2020_2021);
+var barrasFluviais2008 = dataset2008.mean().clip(pf_area_principal_samara_2020_2021);
 
 var visParams = {
   bands: ['B5', 'B4', 'B3'],
