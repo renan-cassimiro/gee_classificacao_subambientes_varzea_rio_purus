@@ -12,7 +12,7 @@ var colecaoPeriodoUmido = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR')
                   
 
 var fill = ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_002066_20100309');
-var destination = ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_002066_20100410');
+var destination = ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_001066_20100419');
 
 print(colecaoPeriodoUmido);
 
