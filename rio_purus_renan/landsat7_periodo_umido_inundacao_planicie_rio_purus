@@ -9,19 +9,6 @@ var datasetlandsat7 = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR')
                   
 print(datasetlandsat7);
 
-var datasetlandsat5 = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
-                  .filterDate('2009-11-01', '2010-04-30')
-                  .filterBounds(table)
-                  .map(cloudMaskL457);
-                  
-var dataset = datasetlandsat5.merge(datasetlandsat7);
-
-var visParams = {
-  bands: ['B5', 'B4', 'B3'],
-  min: 0,
-  max: 3000,
-  gamma: 1.4,
-};
 
 Map.centerObject(table);
 Map.addLayer(dataset.mean().clip(table), visParams, 'Barras Fluviais 2007a');
