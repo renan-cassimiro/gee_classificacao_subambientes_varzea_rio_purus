@@ -14,7 +14,7 @@ print(colecaoPeriodoUmido);
 
 var fill = ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_001066_20091110');
 var src  = ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_002066_20100410');
-var filled = uteisLandsat7.gapFill(src, fill, 10);
+var filled = uteisLandsat7.gapFill(src, fill, 5);
 
 var visParams = {
   bands: ['B5', 'B4', 'B3'],
@@ -24,7 +24,7 @@ var visParams = {
 };
 
 Map.centerObject(area_principal_renan_2020_2021);
-//Map.addLayer(colecaoPeriodoUmido.mean().clip(area_principal_renan_2020_2021), visParams, 'Collection');
-//Map.addLayer(fill, visParams, 'Fill');
-//Map.addLayer(src, visParams, 'SRC');
+Map.addLayer(colecaoPeriodoUmido.mean().clip(area_principal_renan_2020_2021), visParams, 'Collection');
+Map.addLayer(fill, visParams, 'Fill');
+Map.addLayer(src, visParams, 'SRC');
 Map.addLayer(filled, visParams, 'Filled');
