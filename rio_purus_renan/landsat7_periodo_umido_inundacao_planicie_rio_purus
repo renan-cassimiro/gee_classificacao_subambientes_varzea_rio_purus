@@ -5,16 +5,22 @@ var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral
 var uteisLandsat5 = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
 var uteisLandsat7 = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat7');
 
-var colecaoPeriodoUmido = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
-                  .filterDate('2007-11-01', '2008-05-01')
+var colecaoPeriodoUmido2006 = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
+                  .filterDate('2005-11-01', '2006-05-01')
                   .filterBounds(area_principal_renan_2020_2021)
                   .map(uteisLandsat5.mascaraNuvem);
 
-print(colecaoPeriodoUmido);
+
+var colecaoPeriodoUmido2005 = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
+                  .filterDate('2005-11-01', '2006-05-01')
+                  .filterBounds(area_principal_renan_2020_2021)
+                  .map(uteisLandsat5.mascaraNuvem);
 
 var fill = uteisLandsat5.mascaraNuvem(ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_001066_20070222'));
 var src  = uteisLandsat5.mascaraNuvem(ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_001066_20070222'));
 var filled = uteisLandsat7.gapFill(src, fill, 10);
+
+
 
 var visParams = {
   bands: ['B3', 'B2', 'B1'],
@@ -24,7 +30,9 @@ var visParams = {
 };
 
 Map.centerObject(area_principal_renan_2020_2021);
-Map.addLayer(colecaoPeriodoUmido.mean().clip(area_principal_renan_2020_2021), visParams, 'Collection');
+Map.addLayer(colecaoPeriodoUmido2005.mean().clip(area_principal_renan_2020_2021), visParams, '2005');
+Map.addLayer(colecaoPeriodoUmido2006.mean().clip(area_principal_renan_2020_2021), visParams, '2006');
+
 //Map.addLayer(fill, visParams, 'Fill');
 //Map.addLayer(src, visParams, 'SRC');
 //Map.addLayer(filled, visParams, 'Filled');
