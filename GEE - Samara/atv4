@@ -1,0 +1,24 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var riosolimoes = 
+    /* color: #98ff00 */
+    /* shown: false */
+    ee.Geometry.Polygon(
+        [[[-61.3332544864983, -3.3950753107744873],
+          [-61.2618433536858, -3.7952862998998995],
+          [-60.6356226505608, -3.6527656448203065],
+          [-60.77020517009205, -3.2552354869296796]]]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var l8 = ee.ImageCollection('LANDSAT/LC08/C01/T1_TOA')
+//print(l8.size())
+l8 = l8.filterBounds(riosolimoes)
+//print(l8.size())
+l8 = l8.filterDate('2007-06-01', '2017-10-30')
+//print(l8.size())
+var imgMediana = l8.median()
+//Map.addLayer(imgMediana)
+var ndvi = imgMediana.expression('(a-b)/(b+a)', {
+  'b':imgMediana.select('B4'),
+  'a':imgMediana.select('B5')
+})
+
+Map.addLayer(ndvi)
