@@ -6,14 +6,14 @@ var uteisLandsat5 = require('users/renancassimiro/fapesp2020:utilidades/uteis_la
 var uteisLandsat7 = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat7');
 
 var colecaoPeriodoUmido = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR')
-                  .filterDate('2008-11-01', '2009-04-30')
+                  .filterDate('2010-11-01', '2011-04-30')
                   .filterBounds(area_principal_renan_2020_2021)
                   .map(uteisLandsat5.mascaraNuvem);
 
 print(colecaoPeriodoUmido);
 
-var fill = uteisLandsat5.mascaraNuvem(ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_002066_20090202'));
-var src  = uteisLandsat5.mascaraNuvem(ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_002066_20090202'));
+var fill = uteisLandsat5.mascaraNuvem(ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_001066_20070222'));
+var src  = uteisLandsat5.mascaraNuvem(ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_001066_20070222'));
 var filled = uteisLandsat7.gapFill(src, fill, 10);
 
 var visParams = {
