@@ -16,4 +16,4 @@ print(colecaoPeriodoUmido);
 
 
 Map.centerObject(area_principal_renan_2020_2021);
-Map.addLayer(dataset.mean().clip(table), visParams, 'Barras Fluviais 2007a');
+Map.addLayer(colecaoPeriodoUmido.mean().clip(area_principal_renan_2020_2021), visParams, 'Barras Fluviais 2007a');
