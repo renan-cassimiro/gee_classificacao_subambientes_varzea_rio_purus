@@ -6,7 +6,7 @@ var uteisLandsat5 = require('users/renancassimiro/fapesp2020:utilidades/uteis_la
 var uteisLandsat7 = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat7');
 
 var colecaoPeriodoUmido = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
-                  .filterDate('2006-11-01', '2007-04-30')
+                  .filterDate('2007-11-01', '2008-05-01')
                   .filterBounds(area_principal_renan_2020_2021)
                   .map(uteisLandsat5.mascaraNuvem);
 
@@ -25,6 +25,6 @@ var visParams = {
 
 Map.centerObject(area_principal_renan_2020_2021);
 Map.addLayer(colecaoPeriodoUmido.mean().clip(area_principal_renan_2020_2021), visParams, 'Collection');
-Map.addLayer(fill, visParams, 'Fill');
-Map.addLayer(src, visParams, 'SRC');
-Map.addLayer(filled, visParams, 'Filled');
+//Map.addLayer(fill, visParams, 'Fill');
+//Map.addLayer(src, visParams, 'SRC');
+//Map.addLayer(filled, visParams, 'Filled');
