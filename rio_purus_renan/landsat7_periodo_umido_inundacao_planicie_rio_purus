@@ -21,7 +21,7 @@ var src  = uteisLandsat5.mascaraNuvem(ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_0010
 var filled = uteisLandsat7.gapFill(src, fill, 10);
 
 
-var merged = colecaoPeriodoUmido2006.merge(colecaoPeriodoUmido2006);
+var merged = colecaoPeriodoUmido2006.merge(colecaoPeriodoUmido2005);
 
 var visParams = {
   bands: ['B3', 'B2', 'B1'],
@@ -33,7 +33,7 @@ var visParams = {
 Map.centerObject(area_principal_renan_2020_2021);
 Map.addLayer(colecaoPeriodoUmido2005.mean().clip(area_principal_renan_2020_2021), visParams, '2005');
 Map.addLayer(colecaoPeriodoUmido2006.mean().clip(area_principal_renan_2020_2021), visParams, '2006');
-Map.addLayer(merged.mean().clip(area_principal_renan_2020_2021), visParams, 'Merged');
+Map.addLayer(merged.median().clip(area_principal_renan_2020_2021), visParams, 'Merged');
 
 //Map.addLayer(fill, visParams, 'Fill');
 //Map.addLayer(src, visParams, 'SRC');
