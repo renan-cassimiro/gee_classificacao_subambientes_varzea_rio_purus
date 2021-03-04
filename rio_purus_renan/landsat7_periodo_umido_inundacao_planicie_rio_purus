@@ -1,8 +1,6 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/fapesp2020/pf_area_principal_renan_2020_2021");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-
-
 var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral');
 var uteisLandsat5 = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
 var uteisLandsat7 = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat7');
@@ -12,8 +10,18 @@ var colecaoPeriodoUmido = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR')
                   .filterBounds(area_principal_renan_2020_2021)
                   .map(uteisLandsat5.mascaraNuvem);
                   
+
+var fill = ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_001066_20091110');
+
 print(colecaoPeriodoUmido);
 
+var visParams = {
+  bands: ['B5', 'B4', 'B3'],
+  min: 0,
+  max: 3000,
+  gamma: 1.4,
+};
 
 Map.centerObject(area_principal_renan_2020_2021);
-Map.addLayer(colecaoPeriodoUmido.mean().clip(area_principal_renan_2020_2021), uteisGeral.falsaCorNatural, 'Barras Fluviais 2007a');
+Map.addLayer(colecaoPeriodoUmido.mean().clip(area_principal_renan_2020_2021), visParams, 'Collection');
+Map.addLayer(fill, visParams, 'Fill');
