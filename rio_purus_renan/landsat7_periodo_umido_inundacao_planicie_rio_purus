@@ -12,8 +12,8 @@ var colecaoPeriodoUmido = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR')
 
 print(colecaoPeriodoUmido);
 
-var fill = ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_001066_20070222');
-var src  = ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_001066_20070222');
+var fill = ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_002066_20061109');
+var src  = ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_002066_20061109');
 var filled = uteisLandsat7.gapFill(src, fill, 10);
 
 var visParams = {
