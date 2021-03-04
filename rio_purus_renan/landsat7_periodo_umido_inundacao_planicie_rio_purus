@@ -23,7 +23,7 @@ var visParams = {
   gamma: 1.4,
 };
 
-//Map.centerObject(area_principal_renan_2020_2021);
+Map.centerObject(area_principal_renan_2020_2021);
 //Map.addLayer(colecaoPeriodoUmido.mean().clip(area_principal_renan_2020_2021), visParams, 'Collection');
 //Map.addLayer(fill, visParams, 'Fill');
 //Map.addLayer(src, visParams, 'SRC');
