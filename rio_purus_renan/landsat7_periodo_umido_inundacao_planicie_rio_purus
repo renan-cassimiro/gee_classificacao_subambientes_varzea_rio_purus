@@ -10,6 +10,7 @@ var colecaoPeriodoUmido = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR')
                   .filterBounds(area_principal_renan_2020_2021)
                   .map(uteisLandsat5.mascaraNuvem);
                   
+uteisLandsat7.gapFill();
 
 var fill = ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_002066_20100309');
 var destination = ee.Image('LANDSAT/LE07/C01/T1_SR/LE07_001066_20100419');
