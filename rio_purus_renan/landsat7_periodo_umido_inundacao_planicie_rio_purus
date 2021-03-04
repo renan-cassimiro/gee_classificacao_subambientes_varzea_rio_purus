@@ -1,3 +1,6 @@
+var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral');
+var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
+
 var table = ee.FeatureCollection("users/renancassimiro/fapesp2020/pf_area_principal_renan_2020_2021");
 
 var cloudMaskL457 = function(image) {
