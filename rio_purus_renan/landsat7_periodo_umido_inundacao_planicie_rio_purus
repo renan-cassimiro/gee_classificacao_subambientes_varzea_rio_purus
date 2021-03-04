@@ -24,7 +24,7 @@ var filled = uteisLandsat7.gapFill(src, fill, 10);
 var merged = colecaoPeriodoUmido2006.merge(colecaoPeriodoUmido2005);
 
 var visParams = {
-  bands: ['B3', 'B2', 'B1'],
+  bands: ['B5', 'B4', 'B3'],
   min: 0,
   max: 3000,
   gamma: 1.4,
