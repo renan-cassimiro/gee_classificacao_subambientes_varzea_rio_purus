@@ -4,7 +4,7 @@ var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_lan
 
 var colecaoPeriodoUmido = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR')
                   .filterDate('2009-11-01', '2010-04-30')
-                  .filterBounds(table)
+                  .filterBounds(area_principal_renan_2020_2021)
                   .map(uteisGeral.mascaraNuvem());
                   
 print(datasetlandsat7);
