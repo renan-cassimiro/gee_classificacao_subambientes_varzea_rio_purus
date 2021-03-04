@@ -1,11 +1,12 @@
 var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/fapesp2020/pf_area_principal_renan_2020_2021");
 var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral');
-var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
+var uteisLandsat5 = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
+var uteisLandsat7 = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat7');
 
 var colecaoPeriodoUmido = ee.ImageCollection('LANDSAT/LE07/C01/T1_SR')
                   .filterDate('2009-11-01', '2010-04-30')
                   .filterBounds(area_principal_renan_2020_2021)
-                  .map(uteisGeral.mascaraNuvem());
+                  .map(uteisLandsat5.mascaraNuvem());
                   
 print(datasetlandsat7);
 
