@@ -3,7 +3,7 @@ var MAX_SCALE = 3;
 var MIN_NEIGHBORS = 144;
 
 /* Apply the USGS L7 Phase-2 Gap filling protocol, using a single kernel size. */
-exports.GapFill = function(src, fill, kernelSize) {
+exports.gapFill = function(src, fill, kernelSize) {
   var kernel = ee.Kernel.square(kernelSize * 30, "meters", false)
   
   // Find the pixels common to both scenes.
