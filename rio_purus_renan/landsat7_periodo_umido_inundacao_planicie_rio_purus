@@ -6,13 +6,13 @@ var uteisLandsat5 = require('users/renancassimiro/fapesp2020:utilidades/uteis_la
 var uteisLandsat7 = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat7');
 
 var colecaoPeriodoUmido2005 = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
-                  .filterDate('2005-11-01', '2006-05-01')
+                  .filterDate('1997-11-01', '1998-05-01')
                   .filterBounds(area_principal_renan_2020_2021)
                   .map(uteisLandsat5.mascaraNuvem);
 
 
 var colecaoPeriodoUmido2006 = ee.ImageCollection('LANDSAT/LT05/C01/T1_SR')
-                  .filterDate('2006-11-01', '2007-05-01')
+                  .filterDate('1998-11-01', '1999-05-01')
                   .filterBounds(area_principal_renan_2020_2021)
                   .map(uteisLandsat5.mascaraNuvem);
 
