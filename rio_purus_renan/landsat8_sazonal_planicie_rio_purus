@@ -19,7 +19,7 @@ function maskL8sr(image) {
 }
 
 var dataset = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')  
-
+                  .filterBounds(area_principal_renan_2020_2021)
                   .filter(ee.Filter.calendarRange(11,4,'month'))
                   .filterBounds(area_principal_renan_2020_2021)
                   .map(maskL8sr);
