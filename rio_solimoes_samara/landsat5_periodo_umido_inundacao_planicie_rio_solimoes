@@ -2,7 +2,7 @@
 var pf_area_principal_samara_2020_2021 = ee.FeatureCollection("users/samaralydia_GEE/DELIMITACAO_PLANICIE_FLUVIAL_MANACAPURU_");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral');
-var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat5');
+var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsatTM');
 
 var imagemPeriodoUmido1101a = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_231062_20100422');
 imagemPeriodoUmido1101a = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101a);
