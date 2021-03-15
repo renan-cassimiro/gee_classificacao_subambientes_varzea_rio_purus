@@ -1,0 +1,24 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/fapesp2020/pf_area_principal_renan_2020_2021");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral');
+var uteisLandsatTM = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsatTM');
+
+var colecaoLandsat5 = uteisLandsatTM.
+                        importaColecaoLandsat5('2007-01-01', '2009-02-01', area_principal_renan_2020_2021);
+var colecaoLandsat7 = uteisLandsatTM.
+                        importaColecaoLandsat7('2007-01-01', '2009-02-01', area_principal_renan_2020_2021);
+                        
+var colecaoLandsatTM = colecaoLandsat5.merge(colecaoLandsat7);
+
+var colecaoPeriodoChuvoso = colecaoLandsatTM.filter(ee.Filter.calendarRange(11,4,'month'));
+var colecaoPeriodoSeco = colecaoLandsatTM.filter(ee.Filter.calendarRange(5,10,'month'));
+
+var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.median().clip(area_principal_renan_2020_2021);
+var imagemPeriodoSeco = colecaoPeriodoSeco.median().clip(area_principal_renan_2020_2021);
+
+Map.addLayer(imagemPeriodoChuvoso, uteisGeral.falsaCorNatural, 'Período Chuvoso');
+Map.addLayer(imagemPeriodoSeco, uteisGeral.falsaCorNatural, 'Período Seco');
+
+uteisGeral.exportarDrive(imagemPeriodoChuvoso, area_principal_renan_2020_2021, 'imagemPeriodoChuvosoLandsatTM');
+uteisGeral.exportarDrive(imagemPeriodoSeco, area_principal_renan_2020_2021, 'imagemPeriodoSecoLandsatTM');
