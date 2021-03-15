@@ -1,3 +1,6 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var table = ee.FeatureCollection("users/renancassimiro/fapesp2020/pf_area_principal_renan_2020_2021");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
 /**
  * Function to mask clouds based on the pixel_qa band of Landsat 8 SR data.
  * @param {ee.Image} image input Landsat 8 SR image
@@ -15,7 +18,8 @@ function maskL8sr(image) {
   return image.updateMask(mask);
 }
 
-var dataset = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')    
+var dataset = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')  
+
                   .filter(ee.Filter.calendarRange(11,4,'month'))
                   .filterBounds(table)
                   .map(maskL8sr);
