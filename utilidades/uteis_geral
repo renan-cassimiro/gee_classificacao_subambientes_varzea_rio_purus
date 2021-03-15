@@ -1,7 +1,7 @@
-exports.exportarDrive = function(imagem, area) {
+exports.exportarDrive = function(imagem, area, nome) {
   Export.image.toDrive({
     image: imagem,
-    description: 'imagemLandsat',
+    description: nome,
     scale: 30,
     region: area
   });
