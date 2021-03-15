@@ -24,5 +24,9 @@ var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.median().clip(area_principal_re
 var imagemPeriodoSeco = colecaoPeriodoSeco.median().clip(area_principal_renan_2020_2021);
 
 Map.centerObject(area_principal_renan_2020_2021, 13);
-Map.addLayer(imagemPeriodoChuvoso, {min: -25, max: 5}, 'imagemPeriodoChuvosoLandsatSentinel');
-Map.addLayer(imagemPeriodoSeco, {min: -25, max: 5}, 'imagemPeriodoSecoLandsatSentinel');
+Map.addLayer(imagemPeriodoChuvoso, {min: -25, max: 5}, 'Período Chuvoso');
+Map.addLayer(imagemPeriodoSeco, {min: -25, max: 5}, 'Período Seco');
+
+
+uteisGeral.exportarDrive(imagemPeriodoChuvoso, area_principal_renan_2020_2021, 'imagemPeriodoChuvosoLandsatSentinel');
+uteisGeral.exportarDrive(imagemPeriodoSeco, area_principal_renan_2020_2021, 'imagemPeriodoSecoLandsatSentinel');
