@@ -19,4 +19,4 @@ Map.addLayer(imagemPeriodoUmido, uteisGeral.falsaCorNatural, 'imagemPeriodoChuvo
 
 Map.addLayer(pf_area_principal_samara_2020_2021, '', 'area');
 
-uteisGeral.exportarDrive(imagemPeriodoUmido, pf_area_principal_samara_2020_2021);
+uteisGeral.exportarDrive(imagemPeriodoUmido, pf_area_principal_samara_2020_2021, 'imagemPeriodoUmido');
