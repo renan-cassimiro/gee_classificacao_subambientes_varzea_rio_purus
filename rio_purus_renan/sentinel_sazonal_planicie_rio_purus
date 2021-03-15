@@ -19,7 +19,12 @@ var colecaoSentinel = ee.ImageCollection('COPERNICUS/S1_GRD')
 
 console.log(colecaoSentinel);
 
+var colecaoPeriodoChuvoso = colecaoSentinel.filter(ee.Filter.calendarRange(11,4,'month'));
+var colecaoPeriodoSeco = colecaoSentinel.filter(ee.Filter.calendarRange(5,10,'month'));
 
+var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.median().clip(area_principal_renan_2020_2021);
+var imagemPeriodoSeco = colecaoPeriodoSeco.median().clip(area_principal_renan_2020_2021);
 
 Map.centerObject(table, 13);
-Map.addLayer(imgVV.mean(), {min: -25, max: 5}, 'Multi-T Mean ASC', true);
+Map.addLayer(imagemPeriodoChuvoso.median(), {min: -25, max: 5}, 'Multi-T Mean ASC');
+Map.addLayer(imagemPeriodoSeco.median(), {min: -25, max: 5}, 'Multi-T Mean ASC');
