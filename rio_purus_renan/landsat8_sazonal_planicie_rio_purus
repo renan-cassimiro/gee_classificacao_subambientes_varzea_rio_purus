@@ -18,12 +18,17 @@ function maskL8sr(image) {
   return image.updateMask(mask);
 }
 
-var dataset = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')  
+var colecaoLandsat8 = ee.ImageCollection('LANDSAT/LC08/C01/T1_SR')  
                   .filterBounds(area_principal_renan_2020_2021)
                   .filterDate('2018-01-01', '2020-01-01')
-                  .filter(ee.Filter.calendarRange(11,4,'month'))
                   .filterBounds(area_principal_renan_2020_2021)
                   .map(maskL8sr);
+                  
+var colecaoPeriodoChuvoso = colecaoLandsat8.filter(ee.Filter.calendarRange(11,4,'month'));
+var colecaoPeriodoSeco = colecaoLandsat8.filter(ee.Filter.calendarRange(5,10,'month'));
+
+var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.median().clip(area_principal_renan_2020_2021);
+var imagemPeriodoSeco = colecaoPeriodoSeco.median().clip(area_principal_renan_2020_2021);
 
 var visParams = {
   bands: ['B4', 'B3', 'B2'],
@@ -31,5 +36,10 @@ var visParams = {
   max: 3000,
   gamma: 1.4,
 };
-Map.centerObject(area_principal_renan_2020_2021, 12);
-Map.addLayer(dataset.median().clip(area_principal_renan_2020_2021), visParams);
+
+
+Map.addLayer(imagemPeriodoChuvoso, uteisGeral.falsaCorNatural, 'Período Chuvoso');
+Map.addLayer(imagemPeriodoSeco, uteisGeral.falsaCorNatural, 'Período Seco');
+
+uteisGeral.exportarDrive(imagemPeriodoChuvoso, area_principal_renan_2020_2021, 'imagemPeriodoChuvosoLandsat8');
+uteisGeral.exportarDrive(imagemPeriodoSeco, area_principal_renan_2020_2021, 'imagemPeriodoSecoLandsat8');
