@@ -16,5 +16,5 @@ var imagemPeriodoSeco = colecaoPeriodoSeco.median().clip(area_principal_renan_20
 Map.addLayer(imagemPeriodoChuvoso, uteisGeral.falsaCorNatural, 'Período Chuvoso');
 Map.addLayer(imagemPeriodoSeco, uteisGeral.falsaCorNatural, 'Período Seco');
 
-uteisGeral.exportarDrive(imagemPeriodoChuvoso, area_principal_renan_2020_2021);
-uteisGeral.exportarDrive(imagemPeriodoSeco, area_principal_renan_2020_2021);
+uteisGeral.exportarDrive(imagemPeriodoChuvoso, area_principal_renan_2020_2021, 'imagemPeriodoChuvosoLandsat5');
+uteisGeral.exportarDrive(imagemPeriodoSeco, area_principal_renan_2020_2021, 'imagemPeriodoSecoLandsat5');
