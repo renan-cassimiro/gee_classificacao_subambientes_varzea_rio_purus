@@ -8,7 +8,7 @@ var colecaoLandsat5 = uteisLandsatTM.
                         importaColecaoLandsat5('2007-01-01', '2009-02-01', area_principal_renan_2020_2021);
 var colecaoLandsat7 = uteisLandsatTM.
                         importaColecaoLandsat7('2007-01-01', '2009-02-01', area_principal_renan_2020_2021);
-                        
+
 var colecaoLandsatTM = colecaoLandsat5.merge(colecaoLandsat7);
 
 var colecaoPeriodoChuvoso = colecaoLandsatTM.filter(ee.Filter.calendarRange(11,4,'month'));
