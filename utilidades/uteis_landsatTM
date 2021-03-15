@@ -53,6 +53,8 @@ exports.falsaCor = {
 
 exports.falsaCorNatural = {
   bands: ['B5', 'B4', 'B3'],
+  min: 0,
+  max: 3000,
   gamma: 1.4,
 };
 
