@@ -26,5 +26,5 @@ var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.median().clip(area_principal_re
 var imagemPeriodoSeco = colecaoPeriodoSeco.median().clip(area_principal_renan_2020_2021);
 
 Map.centerObject(table, 13);
-Map.addLayer(imagemPeriodoChuvoso.median(), {min: -25, max: 5}, 'Multi-T Mean ASC');
-Map.addLayer(imagemPeriodoSeco.median(), {min: -25, max: 5}, 'Multi-T Mean ASC');
+Map.addLayer(imagemPeriodoChuvoso.median(), {min: -25, max: 5}, 'imagemPeriodoChuvosoLandsatSentinel');
+Map.addLayer(imagemPeriodoSeco.median(), {min: -25, max: 5}, 'imagemPeriodoSecoLandsatSentinel');
