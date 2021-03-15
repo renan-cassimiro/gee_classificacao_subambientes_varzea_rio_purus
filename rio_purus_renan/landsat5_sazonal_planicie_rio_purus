@@ -13,6 +13,8 @@ var colecaoPeriodoSeco = colecaoLandsat5.filter(ee.Filter.calendarRange(5,10,'mo
 var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.median().clip(area_principal_renan_2020_2021);
 var imagemPeriodoSeco = colecaoPeriodoSeco.median().clip(area_principal_renan_2020_2021);
 
+
+Map.centerObject(area_principal_renan_2020_2021, 13);
 Map.addLayer(imagemPeriodoChuvoso, uteisGeral.falsaCorNatural, 'Período Chuvoso');
 Map.addLayer(imagemPeriodoSeco, uteisGeral.falsaCorNatural, 'Período Seco');
 
