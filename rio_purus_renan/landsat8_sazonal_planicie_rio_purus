@@ -38,6 +38,7 @@ var visParams = {
 };
 
 
+Map.centerObject(area_principal_renan_2020_2021, 13);
 Map.addLayer(imagemPeriodoChuvoso, uteisGeral.falsaCorNatural, 'Período Chuvoso');
 Map.addLayer(imagemPeriodoSeco, uteisGeral.falsaCorNatural, 'Período Seco');
 
