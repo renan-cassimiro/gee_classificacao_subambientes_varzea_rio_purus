@@ -16,6 +16,8 @@ var colecaoSentinel = ee.ImageCollection('COPERNICUS/S1_GRD')
           var maskedImage = image.mask().and(edge.not());
           return image.updateMask(maskedImage);
         });
+        
+print(colecaoSentinel);
 
 var colecaoPeriodoChuvoso = colecaoSentinel.filter(ee.Filter.calendarRange(11,4,'month'));
 var colecaoPeriodoSeco = colecaoSentinel.filter(ee.Filter.calendarRange(5,10,'month'));
