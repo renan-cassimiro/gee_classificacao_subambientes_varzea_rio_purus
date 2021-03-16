@@ -9,6 +9,7 @@ var colecaoSentinel = ee.ImageCollection('COPERNICUS/S1_GRD')
         .filter(ee.Filter.listContains('transmitterReceiverPolarisation', 'VV'))
         .filter(ee.Filter.eq('instrumentMode', 'IW'))
         .filterBounds(area_principal_renan_2020_2021)
+        .filterDate('2018-01-01', '2020-01-01')
         .select('VH', 'VV')
         .map(function(image) {
           var edge = image.lt(-30.0);
