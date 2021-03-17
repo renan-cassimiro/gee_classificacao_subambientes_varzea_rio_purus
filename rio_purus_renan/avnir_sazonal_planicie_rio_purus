@@ -1,5 +1,6 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/fapesp2020/pf_area_principal_renan_2020_2021");
+var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/fapesp2020/pf_area_principal_renan_2020_2021"),
+    avnir2OriRgbVis = {"bands":["B3","B2","B1"],"min":0,"max":255};
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
 var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral');
@@ -8,11 +9,7 @@ var uteisLandsatTM = require('users/renancassimiro/fapesp2020:utilidades/uteis_l
 var colecaoAvnir = ee.ImageCollection('JAXA/ALOS/AVNIR-2/ORI')
                   .filter(ee.Filter.date('2007-01-01', '2011-05-01'));
                   
-var avnir2OriRgbVis = {
-  bands: ['B3', 'B2', 'B1'],
-  min: 0.0,
-  max: 255.0,
-};
+
 
 print(colecaoAvnir);
 var colecaoPeriodoChuvoso = colecaoAvnir.filter(ee.Filter.calendarRange(11,4,'month'));
