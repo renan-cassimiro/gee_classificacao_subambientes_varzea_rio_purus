@@ -3,6 +3,7 @@ var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral');
 var uteisLandsatTM = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsatTM');
+var uteisLandsat7 = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat7');
 
 var colecaoLandsat5 = uteisLandsatTM.
                         importaColecaoLandsat5('2007-01-01', '2009-04-01', area_principal_renan_2020_2021);
