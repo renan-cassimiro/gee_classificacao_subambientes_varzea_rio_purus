@@ -10,6 +10,7 @@ var colecaoAvnir = ee.ImageCollection('JAXA/ALOS/AVNIR-2/ORI')
                   .filter(ee.Filter.date('2007-01-01', '2011-05-01'));
                   
 print(colecaoAvnir);
+
 var colecaoPeriodoChuvoso = colecaoAvnir.filter(ee.Filter.calendarRange(11,4,'month'));
 var colecaoPeriodoSeco = colecaoAvnir.filter(ee.Filter.calendarRange(5,10,'month'));
 
