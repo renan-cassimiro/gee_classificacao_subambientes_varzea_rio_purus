@@ -5,7 +5,7 @@ var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral
 var uteisLandsatTM = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsatTM');
 
 var colecaoLandsat5 = uteisLandsatTM.
-                        importaColecaoLandsat5('2006-01-01', '2009-04-01', area_principal_renan_2020_2021);
+                        importaColecaoLandsat5('1994-11-01', '1997-04-01', area_principal_renan_2020_2021);
 print(colecaoLandsat5);
 var colecaoPeriodoChuvoso = colecaoLandsat5.filter(ee.Filter.calendarRange(11,4,'month'));
 var colecaoPeriodoSeco = colecaoLandsat5.filter(ee.Filter.calendarRange(5,10,'month'));
