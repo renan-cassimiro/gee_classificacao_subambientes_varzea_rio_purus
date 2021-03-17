@@ -1,3 +1,8 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var area_principal_renan_2020_2021 = ee.FeatureCollection("users/renancassimiro/fapesp2020/pf_area_principal_renan_2020_2021");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+
 var dataset = ee.ImageCollection('JAXA/ALOS/AVNIR-2/ORI')
                   .filter(ee.Filter.date('2011-01-01', '2011-04-01'));
 var avnir2OriRgb = dataset.select(['B3', 'B2', 'B1']);
