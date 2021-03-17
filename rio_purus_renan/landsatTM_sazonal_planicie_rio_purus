@@ -27,4 +27,3 @@ Map.addLayer(imagemPeriodoSeco, uteisGeral.falsaCorNatural, 'Período Seco');
 
 uteisGeral.exportarDrive(imagemPeriodoChuvoso, area_principal_renan_2020_2021, 'imagemPeriodoChuvosoLandsatTM');
 uteisGeral.exportarDrive(imagemPeriodoSeco, area_principal_renan_2020_2021, 'imagemPeriodoSecoLandsatTM');
-*/
