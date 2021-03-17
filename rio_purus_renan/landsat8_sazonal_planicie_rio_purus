@@ -31,8 +31,8 @@ print(colecaoLandsat8);
 var colecaoPeriodoChuvoso = colecaoLandsat8.filter(ee.Filter.calendarRange(11,4,'month'));
 var colecaoPeriodoSeco = colecaoLandsat8.filter(ee.Filter.calendarRange(5,10,'month'));
 
-var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.median().clip(area_principal_renan_2020_2021);
-var imagemPeriodoSeco = colecaoPeriodoSeco.median().clip(area_principal_renan_2020_2021);
+var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.mean().clip(area_principal_renan_2020_2021);
+var imagemPeriodoSeco = colecaoPeriodoSeco.mean().clip(area_principal_renan_2020_2021);
 
 var visParams = {
   bands: ['B4', 'B3', 'B2'],
