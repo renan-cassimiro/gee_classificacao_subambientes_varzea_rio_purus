@@ -24,6 +24,7 @@ var filled = uteisLandsat7.gapFill(imagemPeriodoChuvosoLandsat7, imagemPeriodoCh
 Map.centerObject(area_principal_renan_2020_2021, 13);
 Map.addLayer(filled.clip(area_principal_renan_2020_2021), uteisGeral.falsaCorNatural, 'Filled');
 Map.addLayer(imagemPeriodoChuvosoLandsat7.clip(area_principal_renan_2020_2021), uteisGeral.falsaCorNatural, 'Landsat 7');
+Map.addLayer(colecaoPeriodoChuvosoLandsat7.median().clip(area_principal_renan_2020_2021), uteisGeral.falsaCorNatural, 'Median - Landsat 7');
 
 /*
 var colecaoLandsatTM = colecaoLandsat5.merge(colecaoLandsat7);
