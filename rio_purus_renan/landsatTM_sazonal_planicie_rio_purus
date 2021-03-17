@@ -12,7 +12,7 @@ var colecaoLandsat7 = uteisLandsatTM.
 print(colecaoLandsat5);
 print(colecaoLandsat7);
 
-var colecaoPeriodoChuvosoLandsat7 = colecaoLandsatLandsat7.filter(ee.Filter.calendarRange(11,4,'month'));
+var colecaoPeriodoChuvosoLandsat7 = colecaoLandsat7.filter(ee.Filter.calendarRange(11,4,'month'));
 var imagemPeriodoChuvosoLandsat7 = colecaoPeriodoChuvosoLandsat7.median();
 
 
