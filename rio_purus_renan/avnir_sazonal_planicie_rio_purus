@@ -9,7 +9,7 @@ var colecaoAvnir = ee.ImageCollection('JAXA/ALOS/AVNIR-2/ORI')
                   .filter(ee.Filter.date('2007-01-01', '2011-05-01'));
                   
 var avnir2OriRgbVis = {
-  bands: ['B4', 'B3', 'B2'],
+  bands: ['B3', 'B2', 'B1'],
   min: 0.0,
   max: 255.0,
 };
