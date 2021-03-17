@@ -15,10 +15,18 @@ print(colecaoLandsat7);
 
 var colecaoPeriodoChuvosoLandsat7 = colecaoLandsat7.filter(ee.Filter.calendarRange(11,4,'month'));
 var imagemPeriodoChuvosoLandsat7 = colecaoPeriodoChuvosoLandsat7.median();
+var source = imagemPeriodoChuvosoLandsat7;
+
+print(imagemPeriodoChuvosoLandsat7);
+
+
+var filled = uteisLandsat7.gapFill(source, source, 10);
+
 
 Map.centerObject(area_principal_renan_2020_2021, 13);
-Map.addLayer(imagemPeriodoChuvosoLandsat7.clip(area_principal_renan_2020_2021), {}, 'Landsat 7');
-Map.addLayer(colecaoPeriodoChuvosoLandsat7.median().clip(area_principal_renan_2020_2021), {}, 'Median - Landsat 7');
+Map.addLayer(filled.clip(area_principal_renan_2020_2021), {}, 'Filled');
+Map.addLayer(source.clip(area_principal_renan_2020_2021), {}, 'Landsat 7');
+Map.addLayer(imagemPeriodoChuvosoLandsat7, {}, 'Median - Landsat 7');
 
 /*
 var colecaoLandsatTM = colecaoLandsat5.merge(colecaoLandsat7);
