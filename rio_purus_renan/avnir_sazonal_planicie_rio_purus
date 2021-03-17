@@ -21,8 +21,8 @@ Map.centerObject(area_principal_renan_2020_2021, 13);
 Map.addLayer(imagemPeriodoChuvoso, uteisGeral.falsaCorNatural, 'Período Chuvoso');
 Map.addLayer(imagemPeriodoSeco, uteisGeral.falsaCorNatural, 'Período Seco');
 
-uteisGeral.exportarDrive(imagemPeriodoChuvoso, area_principal_renan_2020_2021, 'imagemPeriodoChuvosoLandsat5');
-uteisGeral.exportarDrive(imagemPeriodoSeco, area_principal_renan_2020_2021, 'imagemPeriodoSecoLandsat5');
+uteisGeral.exportarDrive(imagemPeriodoChuvoso, area_principal_renan_2020_2021, 'imagemPeriodoChuvosoAvnir');
+uteisGeral.exportarDrive(imagemPeriodoSeco, area_principal_renan_2020_2021, 'imagemPeriodoSecoAvnir');
 
 Map.setCenter(138.7302, 35.3641, 12);
 Map.addLayer(avnir2OriRgb, avnir2OriRgbVis, 'AVNIR-2 ORI RGB');
