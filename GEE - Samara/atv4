@@ -6,19 +6,23 @@ var riosolimoes =
         [[[-61.3332544864983, -3.3950753107744873],
           [-61.2618433536858, -3.7952862998998995],
           [-60.6356226505608, -3.6527656448203065],
-          [-60.77020517009205, -3.2552354869296796]]]);
+          [-60.77020517009205, -3.2552354869296796]]]),
+    imageVisParam = {"opacity":1,"bands":["constant"],"palette":["0bff08"]},
+    imageVisParam2 = {"opacity":1,"bands":["constant"],"palette":["4b71ff"]};
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
-var l8 = ee.ImageCollection('LANDSAT/LC08/C01/T1_TOA')
-//print(l8.size())
-l8 = l8.filterBounds(riosolimoes)
-//print(l8.size())
-l8 = l8.filterDate('2007-06-01', '2017-10-30')
-//print(l8.size())
-var imgMediana = l8.median()
-//Map.addLayer(imgMediana)
+var l7 = ee.ImageCollection('LANDSAT/LE07/C01/T1_TOA')
+l7 = l7.filterBounds(riosolimoes)
+l7 = l7.filterDate('2007-06-01', '2017-10-30')
+var imgMediana = l7.median()
 var ndvi = imgMediana.expression('(a-b)/(b+a)', {
-  'b':imgMediana.select('B4'),
-  'a':imgMediana.select('B5')
+  'b':imgMediana.select('B3'),
+  'a':imgMediana.select('B4')
 })
 
 Map.addLayer(ndvi)
+
+
+var veg = ee.Image(1).mask(ndvi.gte(0.5)).toByte()
+var agua = ee.Image(2).mask(ndvi.lte(-0.01)).toByte()
+Map.addLayer(veg,imageVisParam,'Vegetacao')
+Map.addLayer(agua,imageVisParam2,'Corpos DAgua')
