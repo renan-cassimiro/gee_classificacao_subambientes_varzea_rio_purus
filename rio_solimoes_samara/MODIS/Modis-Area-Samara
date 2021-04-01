@@ -1,0 +1,19 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var pf_area_principal_samara_2020_2021 = ee.FeatureCollection("users/samaralydia_GEE/DELIMITACAO_PLANICIE_FLUVIAL_MANACAPURU_");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+var dataset = ee.ImageCollection('MODIS/006/MOD09GQ')
+dataset = dataset.filterBounds(pf_area_principal_samara_2020_2021)
+dataset = dataset.filterDate('2008-02-11', '2008-02-12
+')
+var dataset = dataset.median().clip(pf_area_principal_samara_2020_2021);
+
+print(dataset);
+
+var falseColorVis = {
+  min: -100.0,
+  max: 8000.0,
+  bands: ['sur_refl_b02', 'sur_refl_b02', 'sur_refl_b01'],
+};
+Map.setCenter(6.746, 46.529, 2);
+Map.addLayer(dataset, falseColorVis, 'False Color');
