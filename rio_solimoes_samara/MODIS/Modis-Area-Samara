@@ -4,10 +4,9 @@ var pf_area_principal_samara_2020_2021 = ee.FeatureCollection("users/samaralydia
 
 var dataset = ee.ImageCollection('MODIS/006/MOD09GQ')
 dataset = dataset.filterBounds(pf_area_principal_samara_2020_2021)
-dataset = dataset.filterDate('2008-02-11', '2008-02-12
-')
+dataset = dataset.filterDate('2008-02-02')
 var dataset = dataset.median().clip(pf_area_principal_samara_2020_2021);
-
+    
 print(dataset);
 
 var falseColorVis = {
