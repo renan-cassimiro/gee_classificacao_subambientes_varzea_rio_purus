@@ -14,5 +14,5 @@ var falseColorVis = {
   max: 8000.0,
   bands: ['sur_refl_b02', 'sur_refl_b02', 'sur_refl_b01'],
 };
-Map.centerObject(dataset, 11);
+Map.centerObject(pf_area_principal_samara_2020_2021, 11);
 Map.addLayer(dataset, falseColorVis, 'False Color');
