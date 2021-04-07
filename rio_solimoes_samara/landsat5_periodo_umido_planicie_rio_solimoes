@@ -4,7 +4,7 @@ var pf_area_principal_samara_2020_2021 = ee.FeatureCollection("users/samaralydia
 var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral');
 var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsatTM');
 
-var colecaoPeriodoUmido = ee.ImageCollection(['']);
+var colecaoPeriodoUmido = ee.ImageCollection(['LANDSAT/LT05/C01/T1_SR/LT05_231062_20090302','LANDSAT/LT05/C01/T1_SR/LT05_231063_20090302','LANDSAT/LT05/C01/T1_SR/LT05_231062_20090403','LANDSAT/LT05/C01/T1_SR/LT05_231063_20090403']);
 
 colecaoPeriodoUmido = colecaoPeriodoUmido.map(uteisLandsat.mascaraNuvem);
 
