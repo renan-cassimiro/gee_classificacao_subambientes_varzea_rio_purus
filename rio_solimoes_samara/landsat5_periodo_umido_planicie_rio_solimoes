@@ -16,4 +16,4 @@ exports.imagemPeriodoUmido = imagemPeriodoUmido;
 Map.addLayer(imagemPeriodoUmido, uteisGeral.falsaCorNatural, 'Imagem do Período Chuvoso');
 Map.addLayer(pf_area_principal_samara_2020_2021, '', 'Área de Estudo');
 
-uteisGeral.exportarDrive(imagemPeriodoUmido, pf_area_principal_samara_2020_2021);
+//uteisGeral.exportarDrive(imagemPeriodoUmido, pf_area_principal_samara_2020_2021);
