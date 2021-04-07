@@ -9,12 +9,18 @@ var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral
 var colecaoPeriodoUmido = require('users/renancassimiro/fapesp2020:rio_solimoes_samara/landsat5_periodo_umido_planicie_rio_solimoes');
 
 var imagemPeriodoUmidoLandsat = colecaoPeriodoUmido.imagemPeriodoUmido;
-var mascaraImagemLandsat = imagemPeriodoUmidoLandsat;
 print(imagemPeriodoUmidoLandsat);
+
+var cloud = imagemPeriodoUmidoLandsat.select('pixel_qa');
+// If the cloud bit (5) is set and the cloud confidence (7) is high
+// or the cloud shadow bit is set (3), then it's a bad pixel.
+var mask = cloud.bitwiseAnd(1 << 5)
+                  .and(cloud.bitwiseAnd(1 << 7))
+                  .or(cloud.bitwiseAnd(1 << 3));
 
 dataset = dataset.filterBounds(pf_area_principal_samara_2020_2021).filterDate('2008-02-02');
 var imagemPeriodoUmidoMODIS = dataset.median().clip(pf_area_principal_samara_2020_2021);
 
 Map.centerObject(pf_area_principal_samara_2020_2021, 11);
-Map.addLayer(mascaraImagemLandsat, '', 'Mascara');
+Map.addLayer(cloud, '', 'Mascara');
 Map.addLayer(imagemPeriodoUmidoMODIS, falseColorVis, 'MODIS - Imagem do Período Chuvoso');
