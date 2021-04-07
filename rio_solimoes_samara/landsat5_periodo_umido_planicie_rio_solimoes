@@ -7,7 +7,7 @@ var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_lan
 var colecaoPeriodoUmido = ee.ImageCollection(['LANDSAT/LT05/C01/T1_SR/LT05_231062_20080111', 'LANDSAT/LT05/C01/T1_SR/LT05_231063_20080111',
                                               'LANDSAT/LT05/C01/T1_SR/LT05_231062_20080127','LANDSAT/LT05/C01/T1_SR/LT05_231063_20080127',
                                               'LANDSAT/LT05/C01/T1_SR/LT05_231063_20080228' ]);
-pint(colecaoPeriodoUmido);
+print(colecaoPeriodoUmido);
 
 var imagemPeriodoUmido = colecaoPeriodoUmido.mean().clip(pf_area_principal_samara_2020_2021);
 exports.imagemPeriodoUmido = imagemPeriodoUmido;
