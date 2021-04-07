@@ -9,7 +9,7 @@ var colecaoPeriodoUmido = ee.ImageCollection(['LANDSAT/LT05/C01/T1_SR/LT05_23106
                                               'LANDSAT/LT05/C01/T1_SR/LT05_231063_20080228','LANDSAT/LT05/C01/T1_SR/LT05_231062_20110204',
                                               'LANDSAT/LT05/C01/T1_SR/LT05_231063_20110204','LANDSAT/LT05/C01/T1_SR/LT05_231062_20110308',
                                               'LANDSAT/LT05/C01/T1_SR/LT05_231063_20110308','LANDSAT/LT05/C01/T1_SR/LT05_231062_20110324',
-                                              'LANDSAT/LT05/C01/T1_SR/LT05_231063_20110324']);
+                                              'LANDSAT/LT05/C01/T1_SR/LT05_231063_20110324', 'LANDSAT/LT05/C01/T1_SR/LT05_231062_20110425',]);
 
 colecaoPeriodoUmido = colecaoPeriodoUmido.map(uteisLandsat.mascaraNuvem);
 
