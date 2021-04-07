@@ -20,5 +20,5 @@ var mosaico = ee.ImageCollection([imagemPeriodoUmidoMODIS, imagemPeriodoUmidoLan
 
 Map.centerObject(pf_area_principal_samara_2020_2021, 11);
 Map.addLayer(mosaico.mean(), '', 'Mosaico');
-Map.addLayer(mascaraImagemPeriodoUmidoLandsat, '', 'Máscara");
+Map.addLayer(mascaraImagemPeriodoUmidoLandsat, '', 'Máscara');
 Map.addLayer(imagemPeriodoUmidoMODIS, falseColorVis, 'MODIS - Imagem do Período Chuvoso');
