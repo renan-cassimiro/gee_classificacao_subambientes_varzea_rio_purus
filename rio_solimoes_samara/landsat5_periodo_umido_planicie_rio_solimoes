@@ -5,14 +5,15 @@ var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral
 var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsatTM');
 
 var colecaoPeriodoUmido = ee.ImageCollection(['LANDSAT/LT05/C01/T1_SR/LT05_231062_20080111', 'LANDSAT/LT05/C01/T1_SR/LT05_231063_20080111',
-                                              'LANDSAT/LT05/C01/T1_SR/LT05_231062_20080127','LANDSAT/LT05/C01/T1_SR/LT05_231063_20080127',
+                                              'LANDSAT/LT05/C01/T1_SR/LT05_231062_20080127', 'LANDSAT/LT05/C01/T1_SR/LT05_231063_20080127',
                                               'LANDSAT/LT05/C01/T1_SR/LT05_231063_20080228' ]);
-print(colecaoPeriodoUmido);
+
+colecaoPeriodoUmido = colecaoPeriodoUmido.map(uteisLandsat.mascaraNuvem);
 
 var imagemPeriodoUmido = colecaoPeriodoUmido.mean().clip(pf_area_principal_samara_2020_2021);
 exports.imagemPeriodoUmido = imagemPeriodoUmido;
 
-Map.addLayer(imagemPeriodoUmido, uteisGeral.falsaCorNatural, 'imagemPeriodoChuvoso');
-Map.addLayer(pf_area_principal_samara_2020_2021, '', 'area');
+Map.addLayer(imagemPeriodoUmido, uteisGeral.falsaCorNatural, 'Imagem do Período Chuvoso');
+Map.addLayer(pf_area_principal_samara_2020_2021, '', 'Área de Estudo');
 
 uteisGeral.exportarDrive(imagemPeriodoUmido, pf_area_principal_samara_2020_2021);
