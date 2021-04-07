@@ -9,7 +9,7 @@ var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral
 var colecaoPeriodoUmido = require('users/renancassimiro/fapesp2020:rio_solimoes_samara/landsat5_periodo_umido_planicie_rio_solimoes');
 
 var imagemPeriodoUmidoLandsat = colecaoPeriodoUmido.imagemPeriodoUmido;
-var mascaraImagemPeriodoUmidoLandsat = imagemPeriodoUmidoLandsat.mask();
+var mascaraImagemPeriodoUmidoLandsat = imagemPeriodoUmidoLandsat.mask().not().clip();
 print(imagemPeriodoUmidoLandsat);
 
 
