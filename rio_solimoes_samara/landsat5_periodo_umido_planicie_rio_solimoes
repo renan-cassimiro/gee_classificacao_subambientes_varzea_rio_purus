@@ -12,21 +12,21 @@ var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_lan
 //imagemPeriodoUmido1101b = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101b);
 //Map.addLayer(imagemPeriodoUmido1101b.clip(pf_area_principal_samara_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101b');
 
-var imagemPeriodoUmido1101c = ee.Image('');
-imagemPeriodoUmido1101c = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101c);
-Map.addLayer(imagemPeriodoUmido1101c.clip(pf_area_principal_samara_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101c');
+//var imagemPeriodoUmido1101c = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_231062_20080127');
+//imagemPeriodoUmido1101c = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101c);
+//Map.addLayer(imagemPeriodoUmido1101c.clip(pf_area_principal_samara_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101c');
 
-var imagemPeriodoUmido1101d = ee.Image('');
-imagemPeriodoUmido1101d = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101d);
-Map.addLayer(imagemPeriodoUmido1101d.clip(pf_area_principal_samara_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101d');
+//var imagemPeriodoUmido1101d = ee.Image('LANDSAT/LT05/C01/T1_SR/LT05_231063_20080127');
+//imagemPeriodoUmido1101d = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101d);
+//Map.addLayer(imagemPeriodoUmido1101d.clip(pf_area_principal_samara_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101d');
 
 var imagemPeriodoUmido1101e = ee.Image('');
 imagemPeriodoUmido1101e = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101e);
 Map.addLayer(imagemPeriodoUmido1101e.clip(pf_area_principal_samara_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101e');
 
-var imagemPeriodoUmido1101f = ee.Image('');
-imagemPeriodoUmido1101f = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101f);
-Map.addLayer(imagemPeriodoUmido1101f.clip(pf_area_principal_samara_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101f');
+//var imagemPeriodoUmido1101f = ee.Image('');
+//imagemPeriodoUmido1101f = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101f);
+//Map.addLayer(imagemPeriodoUmido1101f.clip(pf_area_principal_samara_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101f');
 
 var colecaoPeriodoUmido = ee.ImageCollection([imagemPeriodoUmido1101a, imagemPeriodoUmido1101b,imagemPeriodoUmido1101c,imagemPeriodoUmido1101d,imagemPeriodoUmido1101e,imagemPeriodoUmido1101f ]);
 var imagemPeriodoUmido = colecaoPeriodoUmido.mean().clip(pf_area_principal_samara_2020_2021);
