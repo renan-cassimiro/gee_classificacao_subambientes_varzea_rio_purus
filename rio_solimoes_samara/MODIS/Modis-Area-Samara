@@ -9,12 +9,11 @@ var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral
 var colecaoPeriodoUmido = require('users/renancassimiro/fapesp2020:rio_solimoes_samara/landsat5_periodo_umido_planicie_rio_solimoes');
 
 var imagemPeriodoUmidoLandsat = colecaoPeriodoUmido.imagemPeriodoUmido;
-var mascaraImagemPeriodoUmidoLandsat = imagemPeriodoUmidoLandsat.mask().not().clip();
-print(imagemPeriodoUmidoLandsat);
+var mascaraImagemPeriodoUmidoLandsat = imagemPeriodoUmidoLandsat.mask().not().clip(pf_area_principal_samara_2020_2021);
 
 
 dataset = dataset.filterBounds(pf_area_principal_samara_2020_2021).filterDate('2008-02-02');
-var imagemPeriodoUmidoMODIS = dataset.median().clip(pf_area_principal_samara_2020_2021);
+var imagemPeriodoUmidoMODIS = dataset.median().clip(pf_area_principal_samara_2020_2021).mask(mascaraImagemPeriodoUmidoLandsat);
 
 var mosaico = ee.ImageCollection([imagemPeriodoUmidoMODIS, imagemPeriodoUmidoLandsat]);
 
