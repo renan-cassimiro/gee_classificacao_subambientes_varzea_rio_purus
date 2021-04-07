@@ -32,4 +32,4 @@ Map.addLayer(imagemPeriodoUmidoLandsat, '', 'Landsat - Imagem do Período Chuvos
 Map.addLayer(imagemPeriodoUmidoMODIS, '', 'MODIS - Imagem do Período Chuvoso');
 
 
-uteisGeral.exportarDrive(mosaicoLandsatMODIS, pf_area_principal_samara_2020_2021);
+uteisGeral.exportarDrive(mosaicoLandsatMODIS, pf_area_principal_samara_2020_2021, 'Mosaico Landsat - MODIS');
