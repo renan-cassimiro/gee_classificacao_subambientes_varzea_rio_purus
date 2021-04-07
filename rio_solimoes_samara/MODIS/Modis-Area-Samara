@@ -23,10 +23,9 @@ var imagemPeriodoUmidoMODIS = imageCollection.median().clip(pf_area_principal_sa
                                             'Nadir_Reflectance_Band7'
                                           ], ['B1','B2','B3','B4','B5','B6','B7']).mask(mascaraImagemPeriodoUmidoLandsat);
                                           
-var mosaico = ee.ImageCollection([imagemPeriodoUmidoMODIS, imagemPeriodoUmidoLandsat]);
-
+var mosaicoLandsatMODIS = ee.ImageCollection([imagemPeriodoUmidoMODIS, imagemPeriodoUmidoLandsat]).median;
 
 Map.centerObject(pf_area_principal_samara_2020_2021, 11);
-Map.addLayer(mosaico.mean(), '', 'MosaicoLandsat - MODIS');
+Map.addLayer(mosaicoLandsatMODIS, '', 'MosaicoLandsat - MODIS');
 Map.addLayer(imagemPeriodoUmidoLandsat, '', 'Landsat - Imagem do Período Chuvoso');
 Map.addLayer(imagemPeriodoUmidoMODIS, '', 'MODIS - Imagem do Período Chuvoso');
