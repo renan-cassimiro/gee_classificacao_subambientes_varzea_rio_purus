@@ -12,6 +12,8 @@ var mascaraImagemPeriodoUmidoLandsat = imagemPeriodoUmidoLandsat.mask().not().cl
 
 //Escolher a melhor data ou intervalo
 imageCollection = imageCollection.filterBounds(pf_area_principal_samara_2020_2021).filterDate('2008-02-02');
+
+//Organizando as bandas para ficar na mesma sequência
 var imagemPeriodoUmidoMODIS = imageCollection.median().clip(pf_area_principal_samara_2020_2021)
                                           .select([
                                             'Nadir_Reflectance_Band3',
