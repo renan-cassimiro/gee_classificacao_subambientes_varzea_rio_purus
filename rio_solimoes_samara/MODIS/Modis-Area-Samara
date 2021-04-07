@@ -4,6 +4,8 @@ var pf_area_principal_samara_2020_2021 = ee.FeatureCollection("users/samaralydia
     falseColorVis = {"min":-100,"max":8000,"bands":["sur_refl_b02","sur_refl_b02","sur_refl_b01"]};
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
+var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsatTM');
+
 
 dataset = dataset.filterBounds(pf_area_principal_samara_2020_2021)
 dataset = dataset.filterDate('2008-02-02')
