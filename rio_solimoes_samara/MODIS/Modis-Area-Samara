@@ -12,7 +12,8 @@ var mascaraImagemPeriodoUmidoLandsat = imagemPeriodoUmidoLandsat.mask().not().cl
 print(imagemPeriodoUmidoLandsat);
 
 imageCollection = imageCollection.filterBounds(pf_area_principal_samara_2020_2021).filterDate('2008-02-02');
-var imagemPeriodoUmidoMODIS = imageCollection.median().clip(pf_area_principal_samara_2020_2021);
+var imagemPeriodoUmidoMODIS = imageCollection.median().clip(pf_area_principal_samara_2020_2021)
+                                          .select(['Nadir_Reflectance_Band1']);;
 
 print(imagemPeriodoUmidoMODIS);
 //var mosaico = ee.ImageCollection([imagemPeriodoUmidoMODIS, imagemPeriodoUmidoLandsat]);
