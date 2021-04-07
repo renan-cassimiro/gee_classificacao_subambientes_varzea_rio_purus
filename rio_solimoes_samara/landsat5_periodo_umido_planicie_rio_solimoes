@@ -25,6 +25,9 @@ imagemPeriodoUmido1101e = uteisLandsat.mascaraNuvem(imagemPeriodoUmido1101e);
 Map.addLayer(imagemPeriodoUmido1101e.clip(pf_area_principal_samara_2020_2021), uteisGeral.falsaCorNatural, 'imagemPeriodoUmido1101e');
 
 var colecaoPeriodoUmido = ee.ImageCollection([imagemPeriodoUmido1101a, imagemPeriodoUmido1101b,imagemPeriodoUmido1101c,imagemPeriodoUmido1101d,imagemPeriodoUmido1101e ]);
+
+print(colecaoPeriodoUmido);
+
 var imagemPeriodoUmido = colecaoPeriodoUmido.mean().clip(pf_area_principal_samara_2020_2021);
 Map.addLayer(imagemPeriodoUmido, uteisGeral.falsaCorNatural, 'imagemPeriodoChuvoso');
 
