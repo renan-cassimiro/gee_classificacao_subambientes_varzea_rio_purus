@@ -3,7 +3,7 @@ var pf_area_principal_samara_2020_2021 = ee.FeatureCollection("users/samaralydia
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsatTM');
 var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral');
-var colecaoLandsat5 = uteisLandsat.importaColecaoLandsat5('2007-04-30', '2008-04-30', pf_area_principal_samara_2020_2021);
+var colecaoLandsat5 = uteisLandsat.importaColecaoLandsat5('2008-01-01', '2008-04-30', pf_area_principal_samara_2020_2021);
 var composicao = colecaoLandsat5.median().clip(pf_area_principal_samara_2020_2021);
 var dates = colecaoLandsat5.aggregate_array('system:time_start')
     .map(function(d) { return ee.Date(d)});
