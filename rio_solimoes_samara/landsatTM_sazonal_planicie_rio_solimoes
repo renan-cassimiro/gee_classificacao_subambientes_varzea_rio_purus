@@ -11,6 +11,7 @@ var colecaoLandsat7 = uteisLandsatTM.importaColecaoLandsat7('2006-11-01', '2008-
 print(colecaoLandsat5);
 print(colecaoLandsat7);
 
+var colecaoLandsatTM = colecaoLandsat5;
 var colecaoPeriodoChuvoso = colecaoLandsatTM.filter(ee.Filter.calendarRange(11,4,'month'));
 var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.median().clip(pf_area_principal_samara_2020_2021);
 
