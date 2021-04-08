@@ -2,10 +2,13 @@ var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral
 var uteisLandsatTM = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsatTM');
 var uteisLandsat7 = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat7');
 
-var colecaoLandsat5 = uteisLandsatTM.
-                        importaColecaoLandsat5('2007-01-01', '2009-04-01', area_principal_renan_2020_2021);
-var colecaoLandsat7 = uteisLandsatTM.
-                        importaColecaoLandsat7('2007-01-01', '2009-04-01', area_principal_renan_2020_2021);
+
+var uteisLandsat = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsatTM');
+var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral');
+//var composicao = colecaoLandsat5.median().clip(pf_area_principal_samara_2020_2021);
+
+var colecaoLandsat5 = uteisLandsat.importaColecaoLandsat5('2011-01-01', '2011-04-30', pf_area_principal_samara_2020_2021);
+var colecaoLandsat7 = uteisLandsatTM.importaColecaoLandsat7('2007-01-01', '2009-04-01', area_principal_renan_2020_2021);
 
 print(colecaoLandsat5);
 print(colecaoLandsat7);
