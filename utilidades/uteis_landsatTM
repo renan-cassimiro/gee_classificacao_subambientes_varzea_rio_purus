@@ -39,22 +39,16 @@ exports.importaColecaoLandsat7 = function(dataInicio, dataFim, area){
 **/
 exports.corNatural = {
   bands: ['B3', 'B2', 'B1'],
-  min: 0,
-  max: 3000,
   gamma: 1.4,
 };
 
 exports.falsaCor = {
   bands: ['B4', 'B3', 'B2'],
-  min: 0,
-  max: 3000,
   gamma: 1.4,
 };
 
 exports.falsaCorNatural = {
   bands: ['B5', 'B4', 'B3'],
-  min: 0,
-  max: 3000,
   gamma: 1.4,
 };
 
