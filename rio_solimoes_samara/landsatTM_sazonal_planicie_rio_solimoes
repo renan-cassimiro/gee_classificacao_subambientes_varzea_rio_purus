@@ -3,21 +3,14 @@ var uteisLandsatTM = require('users/renancassimiro/fapesp2020:utilidades/uteis_l
 var uteisLandsat7 = require('users/renancassimiro/fapesp2020:utilidades/uteis_landsat7');
 
 var pf_area_principal_samara_2020_2021 = ee.FeatureCollection("users/samaralydia_GEE/DELIMITACAO_PLANICIE_FLUVIAL_MANACAPURU_");
-//var composicao = colecaoLandsat5.median().clip(pf_area_principal_samara_2020_2021);
 
 var colecaoLandsat5 = uteisLandsatTM.importaColecaoLandsat5('2006-11-01', '2008-04-30', pf_area_principal_samara_2020_2021);
-var colecaoLandsat7 = uteisLandsatTM.importaColecaoLandsat7('2006-11-01', '2008-04-30', pf_area_principal_samara_2020_2021);
+//var colecaoLandsat7 = uteisLandsatTM.importaColecaoLandsat7('2006-11-01', '2008-04-30', pf_area_principal_samara_2020_2021);
 
-print(colecaoLandsat5);
-print(colecaoLandsat7);
-
-var colecaoLandsatTM = colecaoLandsat5;
-var colecaoPeriodoChuvoso = colecaoLandsatTM.filter(ee.Filter.calendarRange(11,4,'month'));
+var colecaoPeriodoChuvoso = colecaoLandsat5.filter(ee.Filter.calendarRange(11,4,'month'));
 var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.median().clip(pf_area_principal_samara_2020_2021);
 
 Map.centerObject(pf_area_principal_samara_2020_2021, 13);
-Map.addLayer(colecaoLandsat5.mean().clip(pf_area_principal_samara_2020_2021), uteisGeral.falsaCorNatural, 'Período Chuvoso - Landsat 5');
-Map.addLayer(colecaoLandsat7.mean().clip(pf_area_principal_samara_2020_2021), uteisGeral.falsaCorNatural, 'Período Chuvoso - Landsat 7');
 Map.addLayer(imagemPeriodoChuvoso, uteisGeral.falsaCorNatural, 'Período Chuvoso');
 
 uteisGeral.exportarDrive(imagemPeriodoChuvoso, pf_area_principal_samara_2020_2021, 'imagemPeriodoChuvosoLandsatTM');
