@@ -21,4 +21,3 @@ Map.addLayer(imagemPeriodoChuvoso, uteisGeral.falsaCorNatural, 'Período Chuvoso
 Map.addLayer(imagemPeriodoChuvoso, uteisGeral.falsaCorNatural, 'Período Chuvoso');
 
 uteisGeral.exportarDrive(imagemPeriodoChuvoso, pf_area_principal_samara_2020_2021, 'imagemPeriodoChuvosoLandsatTM');
-uteisGeral.exportarDrive(imagemPeriodoSeco, pf_area_principal_samara_2020_2021, 'imagemPeriodoSecoLandsatTM');
