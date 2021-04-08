@@ -5,8 +5,8 @@ var uteisLandsat7 = require('users/renancassimiro/fapesp2020:utilidades/uteis_la
 var pf_area_principal_samara_2020_2021 = ee.FeatureCollection("users/samaralydia_GEE/DELIMITACAO_PLANICIE_FLUVIAL_MANACAPURU_");
 //var composicao = colecaoLandsat5.median().clip(pf_area_principal_samara_2020_2021);
 
-var colecaoLandsat5 = uteisLandsatTM.importaColecaoLandsat5('2008-01-01', '2008-04-30', pf_area_principal_samara_2020_2021);
-var colecaoLandsat7 = uteisLandsatTM.importaColecaoLandsat7('2008-01-01', '2008-04-30', pf_area_principal_samara_2020_2021);
+var colecaoLandsat5 = uteisLandsatTM.importaColecaoLandsat5('2007-11-01', '2009-04-30', pf_area_principal_samara_2020_2021);
+var colecaoLandsat7 = uteisLandsatTM.importaColecaoLandsat7('2007-11-01', '2009-04-30', pf_area_principal_samara_2020_2021);
 
 print(colecaoLandsat5);
 print(colecaoLandsat7);
