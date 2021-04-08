@@ -54,21 +54,15 @@ exports.falsaCorNatural = {
 
 exports.diferencaAguaTerra = {
   bands: ['B6', 'B5', 'B4'],
-  min: 0,
-  max: 3000,
   gamma: 1.4,
 };
 
 exports.composicao = {
   bands: ['B7', 'B4', 'B3'],
-  min: 0,
-  max: 3000,
   gamma: 1.4,
 };
 
 exports.detalheDeserto = {
   bands: ['B7', 'B5', 'B3'],
-  min: 0,
-  max: 3000,
   gamma: 1.4,
 };
