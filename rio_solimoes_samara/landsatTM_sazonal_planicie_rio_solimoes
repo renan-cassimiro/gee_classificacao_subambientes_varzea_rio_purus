@@ -7,6 +7,8 @@ var pf_area_principal_samara_2020_2021 = ee.FeatureCollection("users/samaralydia
 var colecaoLandsat5 = uteisLandsatTM.importaColecaoLandsat5('2006-11-01', '2008-04-30', pf_area_principal_samara_2020_2021);
 //var colecaoLandsat7 = uteisLandsatTM.importaColecaoLandsat7('2006-11-01', '2008-04-30', pf_area_principal_samara_2020_2021);
 
+
+//Filtra pelos meses de chuva
 var colecaoPeriodoChuvoso = colecaoLandsat5.filter(ee.Filter.calendarRange(11,4,'month'));
 var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.median().clip(pf_area_principal_samara_2020_2021);
 
