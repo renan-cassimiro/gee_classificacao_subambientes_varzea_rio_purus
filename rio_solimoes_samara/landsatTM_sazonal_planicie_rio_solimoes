@@ -13,11 +13,11 @@ print(colecaoLandsat7);
 
 var colecaoLandsatTM = colecaoLandsat5.merge(colecaoLandsat7);
 var colecaoPeriodoChuvoso = colecaoLandsatTM.filter(ee.Filter.calendarRange(11,4,'month'));
-var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.median().clip(pf_area_principal_samara_2020_2021);
+var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.mean().clip(pf_area_principal_samara_2020_2021);
 
 Map.centerObject(pf_area_principal_samara_2020_2021, 13);
-Map.addLayer(colecaoLandsat5.mean(), uteisGeral.falsaCorNatural, 'Período Chuvoso - Landsat 5');
-Map.addLayer(colecaoLandsat7.mean(), uteisGeral.falsaCorNatural, 'Período Chuvoso - Landsat 7');
+Map.addLayer(colecaoLandsat5.mean().clip(pf_area_principal_samara_2020_2021);, uteisGeral.falsaCorNatural, 'Período Chuvoso - Landsat 5');
+Map.addLayer(colecaoLandsat7.mean().clip(pf_area_principal_samara_2020_2021);, uteisGeral.falsaCorNatural, 'Período Chuvoso - Landsat 7');
 Map.addLayer(imagemPeriodoChuvoso, uteisGeral.falsaCorNatural, 'Período Chuvoso');
 
 uteisGeral.exportarDrive(imagemPeriodoChuvoso, pf_area_principal_samara_2020_2021, 'imagemPeriodoChuvosoLandsatTM');
