@@ -8,7 +8,7 @@ var uteisGeral = require('users/renancassimiro/fapesp2020:utilidades/uteis_geral
 //var composicao = colecaoLandsat5.median().clip(pf_area_principal_samara_2020_2021);
 
 var colecaoLandsat5 = uteisLandsat.importaColecaoLandsat5('2011-01-01', '2011-04-30', pf_area_principal_samara_2020_2021);
-var colecaoLandsat7 = uteisLandsatTM.importaColecaoLandsat7('2011-01-01', '2011-04-30', area_principal_renan_2020_2021);
+var colecaoLandsat7 = uteisLandsatTM.importaColecaoLandsat7('2011-01-01', '2011-04-30', pf_area_principal_samara_2020_2021);
 
 print(colecaoLandsat5);
 print(colecaoLandsat7);
@@ -18,12 +18,12 @@ var colecaoLandsatTM = colecaoLandsat5.merge(colecaoLandsat7);
 var colecaoPeriodoChuvoso = colecaoLandsatTM.filter(ee.Filter.calendarRange(11,4,'month'));
 var colecaoPeriodoSeco = colecaoLandsatTM.filter(ee.Filter.calendarRange(5,10,'month'));
 
-var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.median().clip(area_principal_renan_2020_2021);
-var imagemPeriodoSeco = colecaoPeriodoSeco.median().clip(area_principal_renan_2020_2021);
+var imagemPeriodoChuvoso = colecaoPeriodoChuvoso.median().clip(pf_area_principal_samara_2020_2021);
+var imagemPeriodoSeco = colecaoPeriodoSeco.median().clip(pf_area_principal_samara_2020_2021);
 
-Map.centerObject(area_principal_renan_2020_2021, 13);
+Map.centerObject(pf_area_principal_samara_2020_2021, 13);
 Map.addLayer(imagemPeriodoChuvoso, uteisGeral.falsaCorNatural, 'Período Chuvoso');
 Map.addLayer(imagemPeriodoSeco, uteisGeral.falsaCorNatural, 'Período Seco');
 
-uteisGeral.exportarDrive(imagemPeriodoChuvoso, area_principal_renan_2020_2021, 'imagemPeriodoChuvosoLandsatTM');
-uteisGeral.exportarDrive(imagemPeriodoSeco, area_principal_renan_2020_2021, 'imagemPeriodoSecoLandsatTM');
+uteisGeral.exportarDrive(imagemPeriodoChuvoso, pf_area_principal_samara_2020_2021, 'imagemPeriodoChuvosoLandsatTM');
+uteisGeral.exportarDrive(imagemPeriodoSeco, pf_area_principal_samara_2020_2021, 'imagemPeriodoSecoLandsatTM');
