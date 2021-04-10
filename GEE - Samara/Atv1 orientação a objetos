@@ -1,6 +1,0 @@
-var numA = 4
-var numB = 2
-print(numA + numB)
-var textoA = '4'
-var textoB = '2'
-print(textoA + textoB)
